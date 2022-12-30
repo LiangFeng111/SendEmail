@@ -4,14 +4,14 @@
 
 
 
+import org.junit.Test;
+
 import javax.activation.DataHandler;
 import javax.mail.*;
 import javax.mail.internet.*;
 import java.util.*;
 import java.util.List;
 import javax.activation.FileDataSource;
-import javax.mail.*;
-import javax.mail.internet.*;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Properties;
@@ -38,7 +38,8 @@ public class SendTest {
         email.send(); // 发送！
     }
 
-    public static void main(String[] args) throws Exception {
+    @Test
+    public void send() throws Exception {
         //邮件发送组件
         SendTest emailTest=new SendTest();
         //使用图片验证码生成的随机文本作为验证邮箱的文本，拼合字符发送邮件
