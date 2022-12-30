@@ -26,6 +26,7 @@ jobs:
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-maven-
+      - run:  mvn clean install package '-Dmaven.test.skip=true'
       - name: Build with Maven
         env:
           BDUSS: ${{ secrets.BDUSS }}
